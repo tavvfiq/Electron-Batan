@@ -1,0 +1,16 @@
+.centered-box{
+	border-radius:2px;
+	border:1px solid #eaedf3;
+	margin:auto;
+	background-color:#fff;
+}
+
+.centered-box-outer{
+	min-height:95vh;
+	display:flex;
+}
+
+.errorMessage{
+  min-height: 1.25em;
+  line-height: 1.25;
+}

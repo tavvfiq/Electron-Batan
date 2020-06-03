@@ -1,0 +1,210 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Flot Examples: Axes autoscaling options</title>
+    <link href="./examples.css" rel="stylesheet" type="text/css">
+    <script language="javascript" type="text/javascript" src="./node_modules/flot/source/jquery.js"></script>
+    <script language="javascript" type="text/javascript" src="./node_modules/flot/lib/jquery.mousewheel.js"></script>
+    <script language="javascript" type="text/javascript" src="./node_modules/flot/source/jquery.canvaswrapper.js">
+    </script>
+    <script language="javascript" type="text/javascript" src="./node_modules/flot/source/jquery.colorhelpers.js">
+    </script>
+    <script language="javascript" type="text/javascript" src="./node_modules/flot/source/jquery.flot.js"></script>
+    <script language="javascript" type="text/javascript" src="./node_modules/flot/source/jquery.flot.saturated.js">
+    </script>
+    <script language="javascript" type="text/javascript" src="./node_modules/flot/source/jquery.flot.browser.js">
+    </script>
+    <script language="javascript" type="text/javascript" src="./node_modules/flot/source/jquery.flot.drawSeries.js">
+    </script>
+    <script language="javascript" type="text/javascript" src="./node_modules/flot/source/jquery.flot.uiConstants.js">
+    </script>
+    <script language="javascript" type="text/javascript" src="./jquery.flot.spline.js"></script>
+    <script language="javascript" type="text/javascript" src="./jquery.flot.axislabels.js"></script>
+    <script type="text/javascript">
+
+
+
+    </script>
+</head>
+
+<body>
+    <div id="banner">
+        <div id="header">
+            <!-- <div style="text-align: center;">
+                
+            </div> -->
+            <h2 style="font-size: 56px;" aria-label="°Celsius"><img src="./assets/img/batan.png" width="76px" height="89px">&nbsp;&nbsp;BATAN Burst Test Facility</h2>
+        </div>
+    </div>
+    
+    <div class="wrapper">
+        <div id="content">
+            <div class="demo-container">
+                <div id="placeholder" class="demo-placeholder"></div>
+            </div>
+
+            <div class="demo-container2">
+                <div id="placeholder2" class="demo-placeholder2"></div>
+            </div>
+            <div class="demo-container3">
+                <div id="placeholder3" class="demo-placeholder3"></div>
+            </div>
+        </div>
+        <div class="data_bg">
+            <h3 class="title"> Data Information</h3>
+            <p class="title_temperature"> Temperature</p>
+            <div class="wrapper2">
+                <div class="uhuy">
+                    <div class="tmp" style=" float:left;margin-top:-3px;font-size:24px">
+                        <span style=" display:inline; color: black;">Temperature Sensor 1:&nbsp;</span>
+                    </div>
+                    <div class="tmp" style=" float:left;margin-top:-3px;font-size:24px">
+                        <span id="tmp_received" style=" display:inline; color:blue; text-align: center;">34</span>
+                    </div>
+                    <div class="vk_bk wob-unit" style="float:left;font-size:16px;margin-top:-4px">
+                        <span class="wob_t" style="color:black;display:inline" aria-label="°Celsius"
+                            aria-disabled="true" role="button">°C</span>
+                    </div>
+                </div>
+                <div class="uhuy_2">
+                    <div class="tmp" style=" float:left;margin-top:-3px;font-size:24px">
+                        <span style=" display:inline; color: black;">Temperature Sensor 2:&nbsp;</span>
+                    </div>
+                    <div class="tmp" style=" float:left;margin-top:-3px;font-size:24px">
+                        <span id="tmp_received2" style=" display:inline; color:blue;">34</span>
+
+                    </div>
+                    <div class="vk_bk wob-unit" style="float:left;font-size:16px;margin-top:-4px">
+                        <span class="wob_t" style="display:inline" aria-label="°Celsius" aria-disabled="true"
+                            role="button">°C</span>
+                    </div>
+                </div>
+                <div class="uhuy_3">
+                    <div class="tmp" style=" float:left;margin-top:-3px;font-size:24px">
+                        <span style=" display:inline; color: white;">Temperature Sensor 3:&nbsp;</span>
+                    </div>
+                    <div class="tmp" style=" float:left;margin-top:-3px;font-size:24px">
+                        <span id="tmp_received3" style=" display:inline; color:blue;">34</span>
+
+                    </div>
+                    <div class="vk_bk wob-unit" style="float:left;font-size:16px;margin-top:-4px">
+                        <span class="wob_t" style="display:inline;color:white;" aria-label="°Celsius"
+                            aria-disabled="true" role="button">°C</span>
+                    </div>
+                </div>
+            </div>
+            <div class="wrapper_max_temp">
+                <div class="uhuy">
+                    <div class="tmp" style=" float:left;margin-top:-3px;font-size:24px">
+                        <span style=" display:inline; color: black;">Peak Temperature Sensor 1:&nbsp;</span>
+                    </div>
+                    <div class="tmp" style=" float:left;margin-top:-3px;font-size:24px">
+                        <span id="temp1_max" style=" display:inline; color:blue; text-align: center;">31000</span>
+                    </div>
+                    <div class="vk_bk wob-unit" style="float:left;font-size:16px;margin-top:-4px">
+                        <span class="wob_t" style="color:black;display:inline" aria-label="°Celsius"
+                            aria-disabled="true" role="button">°C</span>
+                    </div>
+                </div>
+                <div class="uhuy_2">
+                    <div class="tmp" style=" float:left;margin-top:-3px;font-size:24px">
+                        <span style=" display:inline; color: black;">Peak Temperature Sensor 2:&nbsp;</span>
+                    </div>
+                    <div class="tmp" style=" float:left;margin-top:-3px;font-size:24px">
+                        <span id="temp2_max" style=" display:inline; color:blue;">31000</span>
+
+                    </div>
+                    <div class="vk_bk wob-unit" style="float:left;font-size:16px;margin-top:-4px">
+                        <span class="wob_t" style="display:inline" aria-label="°Celsius" aria-disabled="true"
+                            role="button">°C</span>
+                    </div>
+                </div>
+                <div class="uhuy_3">
+                    <div class="tmp" style=" float:left;margin-top:-3px;font-size:24px">
+                        <span style=" display:inline; color: white;">Peak Temperature Sensor 3:&nbsp;</span>
+                    </div>
+                    <div class="tmp" style=" float:left;margin-top:-3px;font-size:24px">
+                        <span id="temp3_max" style=" display:inline; color:blue;">31000</span>
+
+                    </div>
+                    <div class="vk_bk wob-unit" style="float:left;font-size:16px;margin-top:-4px">
+                        <span class="wob_t" style="display:inline;color:white;" aria-label="°Celsius"
+                            aria-disabled="true" role="button">°C</span>
+                    </div>
+                </div>
+            </div>
+            <p class="title_pressure">Pressure</p>
+            <div class="wrapper_press">
+                <div class="uhuy2">
+                    <div class="tmp" style=" float:left;margin-top:-3px;font-size:24px">
+                        <span style=" display:inline; color: white;">Pressure Sensor:&nbsp;</span>
+                    </div>
+                    <div class="tmp2" style=" float:left;margin-top:-3px;font-size:24px">
+                        <span id="press" style=" display:inline; color:blue;">34</span>
+    
+                    </div>
+                    <div class="vk_bk wob-unit2" style="float:left;font-size:16px;margin-top:-4px">
+                        <span class="wob_t2" style="display:inline;color:white;" aria-label="°Celsius" aria-disabled="true"
+                            role="button">PA</span>
+                    </div>
+                </div>
+                <div class="uhuy2_1">
+                    <div class="tmp" style=" float:left;margin-top:-3px;font-size:24px">
+                        <span style=" display:inline; color: white;">Peak Pressure Sensor:&nbsp;</span>
+                    </div>
+                    <div class="tmp2" style=" float:left;margin-top:-3px;font-size:24px">
+                        <span id="max_press" style=" display:inline; color:blue;">999</span>
+    
+                    </div>
+                    <div class="vk_bk wob-unit2" style="float:left;font-size:16px;margin-top:-4px">
+                        <span class="wob_t2" style="display:inline;color:white;" aria-label="°Celsius" aria-disabled="true"
+                            role="button">PA</span>
+                    </div>
+                </div>
+            </div>
+            <p class="title_tension">Tension</p>
+            <div class="wrapper_tension">
+                <div class="uhuy3">
+                    <div class="tmp" style=" float:left;margin-top:-3px;font-size:24px">
+                        <span style=" display:inline; color: white;">Tension Sensor:&nbsp;</span>
+                    </div>
+                    <div class="tmp3" style=" float:left;margin-top:-3px;font-size:24px">
+                        <span id="tension" style=" display:inline; color:blue;">34</span>
+    
+                    </div>
+                    <div class="vk_bk wob-unit3" style="float:left;font-size:16px;margin-top:-4px">
+                        <span class="wob_t2" style="display:inline;color:white;" aria-label="°Celsius" aria-disabled="true"
+                            role="button">N/m</span>
+                        <span class="wob_t3" style="display:none;margin-left:-1px" aria-label="°Fahrenheit"
+                            aria-disabled="true" role="button">°F</span>
+                    </div>
+                    
+                </div>
+                <div class="uhuy3_1">
+                    <div class="tmp" style=" float:left;margin-top:-3px;font-size:24px">
+                        <span style=" display:inline; color: white;">Peak Tension Sensor:&nbsp;</span>
+                    </div>
+                    <div class="tmp3" style=" float:left;margin-top:-3px;font-size:24px">
+                        <span id="max_tension" style=" display:inline; color:blue;">999</span>
+    
+                    </div>
+                    <div class="vk_bk wob-unit3" style="float:left;font-size:16px;margin-top:-4px">
+                        <span class="wob_t2" style="display:inline;color:white;" aria-label="°Celsius" aria-disabled="true"
+                            role="button">N/m</span>
+                        <span class="wob_t3" style="display:none;margin-left:-1px" aria-label="°Fahrenheit"
+                            aria-disabled="true" role="button">°F</span>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <p id="readData">Belum Ada</p>
+
+    <script src="./index.js"></script>
+</body>
+
+</html>
